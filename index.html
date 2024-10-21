@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AJAX Image Gallery by Konstantin Petrov">
+    <meta name="keywords" content="image gallery, photo gallery, photography, pictures, custom gallery, photo collection, image collection, online gallery, photo showcase, visual gallery, digital images, photo display, creative gallery, artistic images, photo portfolio, high-resolution images, photo album, gallery website">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat&family=Lobster&family=Raleway&family=Poppins&family=Playfair+Display&family=Oswald&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <title>AJAX Image Gallery by Konstantin Petrov</title>
+  </head>
+<body class="body dark-template">
+  <header class="header header__dark">
+    <div class="header__container">
+      <a href="#" class="logo-container">
+        <span class="logo-name logo-name__dark" id="logoText"></span>
+        <span class="logo-slogan" id="logoSlogan"></span>
+      </a>
+      <form action="/search" method="GET" class="search__form">
+        <div class="search__input-container">
+          <input type="text" name="search" id="searchInput" class="search search__dark" placeholder="Search by keyword..." aria-label="Search" autocomplete="off" autofocus>
+          <span class="clear-search clear-search__dark" id="clearSearch">&#x2716;</span>
+        </div>
+        <button type="submit" class="search-submit search-submit__dark">
+          <span class="search-text" id="searchText"></span>
+          <span class="loader loader__visible" id="loader"></span>
+        </button>
+      </form>
+      <div class="filter__container">
+        <div class="template-color__container">
+          <span class="filter__title title__dark" id="templateColor"></span>
+          <form class="template-color__form">
+            <input type="radio" id="light" name="options" value="light" class="template-color__radio">
+            <label for="light" class="light-color light-template"></label><br>     
+            <input type="radio" id="neutral" name="options" value="neutral" class="template-color__radio" checked>
+            <label for="neutral" class="default-color default-template"></label><br> 
+            <input type="radio" id="dark" name="options" value="dark" class="template-color__radio">
+            <label for="dark" class="dark-color dark-template"></label><br> 
+          </form>
+        </div>
+        <div class="image-size__container">
+          <span class="filter__title title__dark" id="imageSize"></span>
+          <form class="image-size__form">
+            <input type="radio" id="small" name="options" value="small" class="image-size__radio">
+            <label for="small" class="small-images"></label><br>     
+            <input type="radio" id="default" name="options" value="default" class="image-size__radio" checked>
+            <label for="default" class="default-images"></label><br> 
+            <input type="radio" id="big" name="options" value="big" class="image-size__radio">
+            <label for="big" class="big-images"></label>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="image-gallery">
+      <h1 class="page__title">Image gallery by Konstantin Petrov</h1>
+      <div class="gallery__container">
+        <div class="gallery__warning gallery__warning_dark">
+          <p class="warning__text" id="warningText"></p>
+          <span class="close-popup close-popup__dark" id="closePopup">&#x2716;</span>
+        </div>
+        <ul class="gallery__list gallery__list_default">
+        </ul>
+      </div>
+      <button class="more-request">
+        <span class="request-more-text" id="requestMoreText"></span>
+      </button>
+    </section>
+  </main>
+  <footer class="footer footer__dark">
+    <div class="footer__container">
+      <div class="copyright">
+        <span id="copyrightLink"></span> 
+        <span><a href="https://github.com/petruse4ka" target="_blank" class="copyright-link copyright-link__dark">petruse4ka</a></span>
+      </div>
+      <div class="logo">
+        <a class="logo_link" href="https://rs.school/courses/javascript-preschool-ru" target="_blank"><img src="assets/svg/rs-school-logo.svg" alt="Rolling-scopes school logo" width="50" height="50"></a>
+      </div>
+      <div class="language-selector">
+        <label class="language__title" for="selectLanguage">Language</label>
+        <select class="language__dropdown language__dropdown__dark" id="selectLanguage">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+        </select>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
